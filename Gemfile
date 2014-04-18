@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
@@ -43,6 +43,11 @@ gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'ransack',             github: 'ernie/ransack'
 gem 'activeadmin',         github: 'gregbell/active_admin'
 gem 'formtastic',          github: 'justinfrench/formtastic'
+
+gem "less-rails"
+gem 'twitter-bootstrap-rails'
+
+gem 'protected_attributes'
 
 group :production do
   gem 'pg', '0.15.1'
