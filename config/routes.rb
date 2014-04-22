@@ -1,4 +1,34 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  get 'actor/index'
+
+  get 'episode/index'
+
+  get 'season/index'
+
+  get 'fashion/index'
+
+  get 'fashion/new'
+
+  get 'fashion/edit'
+
+  get 'fashion/delete'
+
+  get 'outfit/new'
+
+  get 'outfit/edit'
+
+  get 'outfit/delete'
+
+  get 'show/index'
+
+  get 'show/new'
+
+  get 'show/update'
+
+  get 'show/delete'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
