@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418183102) do
+ActiveRecord::Schema.define(version: 20140422185204) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -55,5 +55,78 @@ ActiveRecord::Schema.define(version: 20140418183102) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+
+  create_table "banners", force: true do |t|
+    t.string   "banner_type"
+    t.string   "banner_type2"
+    t.integer  "season"
+    t.string   "image"
+    t.string   "language"
+    t.integer  "show_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "banners", ["show_id"], name: "index_banners_on_show_id"
+
+  create_table "episodes", force: true do |t|
+    t.integer  "season_number"
+    t.integer  "number"
+    t.string   "name"
+    t.text     "overview"
+    t.string   "image"
+    t.string   "air_date"
+    t.string   "guest_stars"
+    t.string   "director"
+    t.string   "writer"
+    t.integer  "rating"
+    t.integer  "rating_count"
+    t.integer  "show_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fashions", force: true do |t|
+    t.boolean  "match"
+    t.string   "image"
+    t.string   "ad_url"
+    t.integer  "outfit_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fashions", ["outfit_id"], name: "index_fashions_on_outfit_id"
+
+  create_table "outfits", force: true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.integer  "actor_id"
+    t.integer  "episode_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "outfits", ["actor_id"], name: "index_outfits_on_actor_id"
+  add_index "outfits", ["episode_id"], name: "index_outfits_on_episode_id"
+
+  create_table "shows", force: true do |t|
+    t.string   "name"
+    t.text     "overview"
+    t.string   "first_aired"
+    t.string   "genres"
+    t.string   "network"
+    t.integer  "rating"
+    t.integer  "runtime"
+    t.string   "air_time"
+    t.string   "imdb_id"
+    t.integer  "episodes_count"
+    t.integer  "actors_count"
+    t.integer  "seasons_count"
+    t.string   "status"
+    t.string   "airs_dayofweek"
+    t.integer  "rating_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
