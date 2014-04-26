@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20140422185204) do
     t.string   "name"
     t.integer  "roles_id"
     t.string   "image"
-    t.integer  "shows_id"
+    t.integer  "show_id"
     t.integer  "sort_order"
     t.datetime "created_at"
     t.datetime "updated_at"

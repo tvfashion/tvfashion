@@ -1,2 +1,21 @@
-<h1>Show#index</h1>
-<p>Find me in app/views/show/index.html.erb</p>
+     <div class="row">
+        <div class="large-12 columns">
+            <h1>Shows</h1>
+            <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
+                <% if @show.present? %>
+                    <% @show.each do |show| %>
+                            <li>
+                                <% poster = show.banners.where("banner_type = 'poster'").first %>
+                                <%=  %>
+                                <% if !poster.nil? %> 
+                                    <%= link_to(image_tag(poster.image_path), show) %>
+                                <% end %>
+                            </li>
+                      <% end %>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+<br>
+
+<%= link_to 'New Show', :action => 'new' %>

@@ -1,33 +1,33 @@
 Rails.application.routes.draw do
-  get 'home/index'
 
-  get 'actor/index'
+  root 'show#index'
 
-  get 'episode/index'
+  # match '/shows', to: "show/create", to: 'show#new', as: 'shows', via: [:post, :patch]
 
-  get 'season/index'
+  match '/show/create', to: 'show#create', as: 'newshow', via: [:post, :patch]
 
-  get 'fashion/index'
+  resources :show do
+    get :get_episode, on: :collection
+    get :get_actors, on: :collection
+  end
 
-  get 'fashion/new'
+  resources :fashion
+  resources :episode
+  resources :actor
 
-  get 'fashion/edit'
+  get 'update_all_show', to: 'show#update_show'
 
-  get 'fashion/delete'
+  resources :show do
+    resources :actors
+    resources :episode do
+         resources :fashion
+      
+    end
+  end
 
-  get 'outfit/new'
-
-  get 'outfit/edit'
-
-  get 'outfit/delete'
-
-  get 'show/index'
-
-  get 'show/new'
-
-  get 'show/update'
-
-  get 'show/delete'
+  #get '/home' => 'page#home'
+  
+  get '/show/:season_show/:season_num' => 'season#show', as: :season
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

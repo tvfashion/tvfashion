@@ -4,7 +4,7 @@ class CreateActors < ActiveRecord::Migration
       t.string :name
       t.integer :roles_id
       t.string :image
-      t.integer :shows_id
+      t.integer :show_id
       t.integer :sort_order
 
       t.timestamps

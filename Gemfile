@@ -49,6 +49,12 @@ gem 'twitter-bootstrap-rails'
 
 gem 'protected_attributes'
 
+# api thedvb
+gem 'tvdb_party', :git => 'git://github.com/davidpan/tvdb_party.git'
+
+gem 'carrierwave'
+gem 'cloudinary'
+
 group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
