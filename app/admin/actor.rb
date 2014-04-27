@@ -1,4 +1,4 @@
-ActiveAdmin.register Actors do
+ActiveAdmin.register Actor do
 
   
   # See permitted parameters documentation:

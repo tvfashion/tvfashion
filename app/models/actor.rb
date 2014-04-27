@@ -1,5 +1,5 @@
-class Actors < ActiveRecord::Base
-	attr_accessible :id, :name, :roles_id , :image, :show_id, :sort_order
+class Actor < ActiveRecord::Base
+	attr_accessible :id, :name, :role , :image, :show_id, :sort_order
 
   	belongs_to :show
   	has_many :outfits

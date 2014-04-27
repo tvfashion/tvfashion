@@ -12,7 +12,7 @@ class CreateEpisodes < ActiveRecord::Migration
       t.string :writer
       t.integer :rating 
       t.integer :rating_count
-      t.integer :show_id
+      t.references :show, index: true
 
       t.timestamps
     end

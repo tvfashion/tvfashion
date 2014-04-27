@@ -30,13 +30,15 @@ ActiveRecord::Schema.define(version: 20140422185204) do
 
   create_table "actors", force: true do |t|
     t.string   "name"
-    t.integer  "roles_id"
+    t.integer  "role"
     t.string   "image"
     t.integer  "show_id"
     t.integer  "sort_order"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "actors", ["show_id"], name: "index_actors_on_show_id"
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: ""
@@ -85,6 +87,8 @@ ActiveRecord::Schema.define(version: 20140422185204) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "episodes", ["show_id"], name: "index_episodes_on_show_id"
 
   create_table "fashions", force: true do |t|
     t.boolean  "match"

@@ -50,10 +50,10 @@ class Functions
         sort_order: actor.sortorder.to_i
       }
 
-      if !Actors.find_by_id(actor.id.to_i)
-        Actors.create(@act_tvdb)
-      elsif Actors.find(actor.id.to_i) != @act_tvdb
-        Actors.find(actor.id.to_i).update(@act_tvdb)
+      if !Actor.find_by_id(actor.id.to_i)
+        Actor.create(@act_tvdb)
+      elsif Actor.find(actor.id.to_i) != @act_tvdb
+        Actor.find(actor.id.to_i).update(@act_tvdb)
       end
     end
       
@@ -70,7 +70,7 @@ class Functions
         name: episode.name,
         overview: episode.overview,
         air_date: episode.air_date.to_s,
-        thumb: @img["url"],
+        image: @img["url"],
         guest_stars: episode.guest_stars.join(", "),
         director: episode.director,
         writer: episode.writer,

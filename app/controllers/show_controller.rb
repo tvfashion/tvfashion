@@ -26,19 +26,9 @@ class ShowController < ApplicationController
    # POST /shows
    # POST /shows.json
    def create
-     # @show = Show.new(show_params)
        pullFromDb = Functions.new
        pullFromDb.AddOrUpdate(params[:name])
        redirect_to action: :index
-     # respond_to do |format|
-     #   if @show.save
-     #     format.html { redirect_to @show, notice: 'Show was successfully created.' }
-     #     format.json { render action: 'show', status: :created, location: @show }
-     #   else
-     #     format.html { render action: 'new' }
-     #     format.json { render json: @show.errors, status: :unprocessable_entity }
-     #   end
-     # end
    end
 
    # PATCH/PUT /shows/1
@@ -55,8 +45,6 @@ class ShowController < ApplicationController
      end
    end
 
-   # DELETE /shows/1
-   # DELETE /shows/1.json
    def destroy
      @show.destroy
      respond_to do |format|
