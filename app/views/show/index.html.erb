@@ -8,7 +8,7 @@
 
                                 <% poster = show.banner.where("banner_type = 'poster'").first %>
                                 <% if !poster.nil? %> 
-                                    <%= link_to(image_tag(poster.image_path), show) %>
+                                    <%= link_to(image_tag(poster.image), show) %>
                                 <% end %>
                                 <h3><%= link_to(show.name, show) %></h3>
                             </li>

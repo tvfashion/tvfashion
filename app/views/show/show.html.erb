@@ -8,10 +8,10 @@
         <div id="featured">
             <div class="fanart">
                 <% fanart = @show.banner.where("banner_type = 'fanart'").first %>
-                <%= image_tag(fanart.image_path) %>
+                <%= image_tag(fanart.image) %>
                 <div class="fanart-overlay">
                     <% poster = @show.banner.where("banner_type = 'poster'").first %>
-                    <%= image_tag(poster.image_path) %>
+                    <%= image_tag(poster.image) %>
                     <div class="fanart-description">
                         <div class="fanart-content">
                             <h1><%= @show.name %></h1>

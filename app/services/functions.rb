@@ -91,7 +91,7 @@ class Functions
         banner_type: banner.banner_type,
         banner_type2: banner.banner_type2,
         season: banner.season,
-        image_path: @img["url"],
+        image: @img["url"],
         language: banner.language,
         show_id: series.id.to_i
       )
