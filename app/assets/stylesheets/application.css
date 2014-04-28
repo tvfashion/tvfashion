@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ul{ list-style: none; }
+
+.actors-list li{ position: relative; margin-bottom: 20px; }
+
+.act-name {
+    background: rgba(255, 255, 254, 0.6);
+    display: block;
+    padding: 10px 0;
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    margin-top: -40px;
+    width: 100%;
+}

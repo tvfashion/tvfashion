@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<!-- Top Fan Art -->
+<div class="row">
+  <div class="large-12 columns">
+    <!-- Desktop Slider -->
+
+    <div class="hide-for-small">
+        <div id="featured">
+            <div class="fanart">
+                <% act_show = @actor.show %>
+                <% fanart = act_show.banner.where("banner_type = 'fanart'").first %>
+                <%= image_tag(fanart.image_path) %>
+                <div class="fanart-overlay">
+                    <%= image_tag(@actor.image) %>
+                    <div class="fanart-description">
+                        <div class="fanart-content">
+                            <h1><%= @actor.role %></h1>
+                            <h2>Played By: <%= @actor.name %></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Desktop Slider -->
+    <!-- Mobile Header -->
+
+    <div class="row">
+      <div class="small-12 show-for-small"><br>
+      <img src="http://placehold.it/1000x600&amp;text=For%20Small%20Screens"></div>
+    </div><!-- End Mobile Header -->
+  </div>
+</div><br>
+<!-- END Top Fan Art -->
+
+
+<!-- Top Fashion -->
+<div class="row">
+  <div class="large-12 columns">
+      <h1>Top Fashion</h1>
+    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+<!--        for each fashion matching series_id ( show thumb and link to corresponding fashion       -->
+    </ul>
+  </div>
+</div><br>
+<!-- END Top Fashion -->
+

@@ -35,8 +35,8 @@
         <% $i +=1   %> 
         <% cover = @show.banner.where("season = ?", $i.to_s).take(1) %> 
         <% if cover.first != nil %>
-        <li>
-        <%= link_to( image_tag(cover.first.image), season_path(@show.id, $i)) %>
+        <li class='span3'>
+          <%= link_to( image_tag(cover.first.image), season_path(@show.id, $i)) %>
         </li>
         <% end %>
         <% end %>
@@ -49,19 +49,20 @@
 <div class="row">
   <div class="large-12 columns">
       <h1>Top Actors</h1>
-    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+        <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 actors-list">
         
-        <% sorted = @show.actors.sort { |a,b| a.sort_order <=> b.sort_order } %> <!-- sort actors by sort order -->
-        <% sorted.each do |act| %>
-        <% if act.image != nil %> <!-- Checks to see if they have image -->
-        <li> 
-       <%= link_to( image_tag(act.image), show_actor_path(@show.id, act)) %> <!-- Display actor image and link to their page -->
-        </li>
-        <% end %>
-        <% end %>
-<!--        for each actor matching series_id with image ( show image and link to corresponding actor)       -->
+          <% sorted = @show.actors.sort { |a,b| a.sort_order <=> b.sort_order } %> <!-- sort actors by sort order -->
+          <% sorted.each do |act| %>
+          <% if act.image != nil %> <!-- Checks to see if they have image -->
+          <li class="span3"> 
+             <%= link_to( image_tag(act.image), show_actor_path(@show.id, act)) %> <!-- Display actor image and link to their page -->
+             <span class="act-name"><%= act.name %></span>
+          </li>
+          <% end %>
+          <% end %>
+  <!--        for each actor matching series_id with image ( show image and link to corresponding actor)       -->
         
-    </ul>
+        </ul>
   </div>
 </div><br>
 <!-- END Top Actors -->
