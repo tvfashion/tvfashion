@@ -49,9 +49,11 @@
           <a class="brand" href="#">Tvfashion</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "Home", "/path1"  %></li>
+              <li><%= link_to "TV Shows", "/path2"  %></li>
+              <li><%= link_to "Fashion", "/path3"  %></li>
+              <li><%= link_to "Add Fashion", "/path3"  %></li>
+              <li><%= link_to "Account", "/path3"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -59,22 +61,18 @@
     </div>
 
     <div class="container">
+    <% flash.each do |name, msg| %>
+    	<div class="alert alert-<%= name == notice ? "success" : "error" %>">
+    		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    		<%= msg %>
+    	</div>
+    <% end %>
+
         <div class="row">
-          <div class="span9">
+          <div class="span12">
             <%= bootstrap_flash %>
             <%= yield %>
           </div>
-          <div class="span3">
-            <div class="well sidebar-nav">
-              <h3>Sidebar</h3>
-              <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
-              </ul>
-            </div><!--/.well -->
-          </div><!--/span-->
         </div><!--/row-->
 
       <footer>
