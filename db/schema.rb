@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422185204) do
+ActiveRecord::Schema.define(version: 20140428175258) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140422185204) do
 
   create_table "actors", force: true do |t|
     t.string   "name"
-    t.integer  "role"
+    t.string   "role"
     t.string   "image"
     t.integer  "show_id"
     t.integer  "sort_order"
