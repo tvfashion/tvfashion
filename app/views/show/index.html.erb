@@ -4,8 +4,7 @@
             <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
                 <% if @show.present? %>
                     <% @show.each do |show| %>
-                            <li>
-
+                            <li class='span3'>
                                 <% poster = show.banner.where("banner_type = 'poster'").first %>
                                 <% if !poster.nil? %> 
                                     <%= link_to(image_tag(poster.image), show) %>

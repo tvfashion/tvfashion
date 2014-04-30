@@ -35,7 +35,7 @@
     <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
         <% @episodes.each do |epi| %>
         <% if epi.image %> <!-- Checks to see if they have image -->
-        <li> 
+        <li class='span2'> 
        <%= link_to( image_tag(epi.image), episode_path(epi)) %> <!-- Display actor image and link to their page -->
             <p class="episodeInfo"><%= epi.season_number.to_s + " X " + epi.number.to_s %></p>
         </li>
@@ -52,12 +52,13 @@
 <div class="row">
   <div class="large-12 columns">
       <h1>Top Actors</h1>
-    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 actors-list">
         <% sorted = @season_show.actors.sort { |a,b| a.sort_order <=> b.sort_order } %> <!-- sort actors by sort order -->
         <% sorted.each do |act| %>
         <% if act.image != nil %> <!-- Checks to see if they have image -->
-        <li> 
-       <%= link_to( image_tag(act.image), show_actor_path(@season_show.id, act)) %> <!-- Display actor image and link to their page -->
+        <li class='span3'> 
+          <%= link_to( image_tag(act.image), show_actor_path(@season_show.id, act)) %> <!-- Display actor image and link to their page -->
+          <span class="act-name"><%= act.name %></span>
         </li>
         <% end %>
         <% end %>

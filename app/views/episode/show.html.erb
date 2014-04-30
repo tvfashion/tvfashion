@@ -11,7 +11,7 @@
             <div class="fanart">
                 <% fanart = @episode.show.banner.where("banner_type = 'fanart'").first %>
                 <%= image_tag(fanart.image) %>
-                <div class="fanart-overlay">
+                <div class="fanart-overlay-episode">
                     <%= image_tag(@episode.image) %>
                     <div class="fanart-description">
                         <div class="fanart-content-episode">
