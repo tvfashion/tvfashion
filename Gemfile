@@ -54,6 +54,7 @@ gem 'tvdb_party', :git => 'git://github.com/davidpan/tvdb_party.git'
 
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'devise'
 
 group :production do
   gem 'pg', '0.15.1'

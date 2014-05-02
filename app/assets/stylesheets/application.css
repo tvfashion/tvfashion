@@ -28,3 +28,7 @@ ul{ list-style: none; }
     margin-top: -40px;
     width: 100%;
 }
+
+a, a:link, a:visited {
+    text-decoration: none;
+}
