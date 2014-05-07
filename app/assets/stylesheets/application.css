@@ -14,9 +14,9 @@
  *= require_self
  */
 
-@import url(http://fonts.googleapis.com/css?family=Carrois+Gothic+SC);
-@import url(http://fonts.googleapis.com/css?family=Raleway:800,700,500,900);
-@import url(http://fonts.googleapis.com/css?family=Dosis:200,300,400,500);
+@import url(https://fonts.googleapis.com/css?family=Carrois+Gothic+SC);
+@import url(https://fonts.googleapis.com/css?family=Raleway:800,700,500,900);
+@import url(https://fonts.googleapis.com/css?family=Dosis:200,300,400,500);
 
 .navbar a{
 	font-family: 'Carrois Gothic SC', sans-serif;
