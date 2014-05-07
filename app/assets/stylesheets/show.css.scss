@@ -2,16 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.fanart{  
-    float:left; /* important */  
-    position:relative; /* important(so we can absolutely position the description div */  
-}  
+.fanart{
+    float:left; /* important */
+    position:relative; /* important(so we can absolutely position the description div */
+}
 
 .fanart-overlay{
-	position:absolute; /* absolute position (so we can position it where we want)*/  
-    bottom:0px; /* position will be on bottom */   
+	position:absolute; /* absolute position (so we can position it where we want)*/
+    bottom:0px; /* position will be on bottom */
     width:100%;
-    height: 40%; 
+    height: 40%;
 
 }
 
@@ -23,27 +23,27 @@
 	padding-left: 20px;
 	padding-bottom: 10px;
 }
-.fanart-description{  
+.fanart-description{
 	position:absolute;
 	width: 80%;
 	z-index: 10;
-    bottom:0px; /* position will be on bottom */   
+    bottom:0px; /* position will be on bottom */
     width:100%;
-    height: 80%;  
-    /* styling bellow */  
-    background-color:black;  
-    font-family: 'tahoma';  
-    font-size:15px;  
-    color:white;  
-    opacity:0.6; /* transparency */  
-    filter:alpha(opacity=60); /* IE transparency */  
-}  
-.fanart-content{  
+    height: 80%;
+    /* styling bellow */
+    background-color: rgba(12, 11, 11, 0.6);
+    font-family: 'tahoma';
+    font-size:15px;
+    color:white;
+    // opacity:0.6; /* transparency */
+    // filter:alpha(opacity=60); /* IE transparency */
+}
+.fanart-content{
     padding:10px;
-    padding-left: 250px;  
-    margin:0px;  
+    padding-left: 250px;
+    margin:0px;
         h1 {
-       color:white;     
+       color:white;
     }
-    
-}  
+
+}

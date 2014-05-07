@@ -1,16 +1,16 @@
      <div class="row">
         <div class="large-12 columns">
             <h1>Shows</h1>
-            <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
+            <ul class="row">
                 <% if @show.present? %>
                     <% @show.each do |show| %>
-                            <li>
+                            <li class='span3'>
 
                                 <% poster = show.banner.where("banner_type = 'poster'").first %>
-                                <% if !poster.nil? %> 
+                                <% if !poster.nil? %>
                                     <%= link_to(image_tag(poster.image), show) %>
                                 <% end %>
-                                <h3><%= link_to(show.name, show) %></h3>
+                                <h3 class='show-title'><%= link_to(show.name, show) %></h3>
                             </li>
                       <% end %>
                 <% end %>

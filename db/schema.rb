@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140502162811) do
 
   create_table "actors", force: true do |t|
     t.string   "name"
-    t.string   "role"
+    t.integer  "role"
     t.string   "image"
     t.integer  "show_id"
     t.integer  "sort_order"
@@ -38,9 +38,11 @@ ActiveRecord::Schema.define(version: 20140502162811) do
     t.datetime "updated_at"
   end
 
+  add_index "actors", ["show_id"], name: "index_actors_on_show_id"
+
   create_table "admin_users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: ""
+    t.string   "encrypted_password",     default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -85,6 +87,8 @@ ActiveRecord::Schema.define(version: 20140502162811) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "episodes", ["show_id"], name: "index_episodes_on_show_id"
 
   create_table "fashions", force: true do |t|
     t.boolean  "match"

@@ -10,7 +10,7 @@
             <div class="fanart">
                 <% act_show = @actor.show %>
                 <% fanart = act_show.banner.where("banner_type = 'fanart'").first %>
-                <%= image_tag(fanart.image_path) %>
+                <%= image_tag(fanart.image) %>
                 <div class="fanart-overlay">
                     <%= image_tag(@actor.image) %>
                     <div class="fanart-description">
@@ -27,7 +27,7 @@
 
     <div class="row">
       <div class="small-12 show-for-small"><br>
-      <img src="http://placehold.it/1000x600&amp;text=For%20Small%20Screens"></div>
+      <!-- <img src="http://placehold.it/1000x600&amp;text=For%20Small%20Screens"></div> -->
     </div><!-- End Mobile Header -->
   </div>
 </div><br>
