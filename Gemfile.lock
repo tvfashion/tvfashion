@@ -282,6 +282,7 @@ DEPENDENCIES
   carrierwave
   cloudinary
   coffee-rails (~> 4.0.0)
+  devise
   formtastic!
   inherited_resources!
   jbuilder (~> 2.0)

@@ -53,14 +53,33 @@
               <li><%= link_to "TV Shows", '/show'  %></li>
               <li><%= link_to "Fashion", '/fashion' %></li>
               <li><%= link_to "Add Fashion", '/fashion/new'  %></li>
-              <li><%= link_to "Account", '/account'  %></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <% if !current_user  %>
+                    Account
+                    <% else %>
+                      <%= current_user.email %>
+                    <% end %>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- links -->
+                  <% if !current_user %>
+                    <li><%= link_to "Sign-In", new_user_session_path %></li>
+                    <li><%= link_to "Register", new_user_registration_path %></li>
+                  <% else %>
+                    <li><%= link_to "Edit", edit_user_registration_path %></li>
+                    <li><%= link_to "Signout", destroy_user_session_path, method: 'delete' %></li>
+                  <% end %>
+                </ul>
+              </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
-    <div class="container">
+   <div class="container">
     <% flash.each do |name, msg| %>
     	<div class="alert alert-<%= name == notice ? "success" : "error" %>">
     		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -76,7 +95,7 @@
         </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2014</p>
+        <p class='copyright'>&copy; 2014 TvFashion.Com</p>
       </footer>
 
     </div> <!-- /container -->

@@ -58,7 +58,7 @@ class ShowController < ApplicationController
        pullFromDb = Functions.new
        pullFromDb.AddOrUpdate(s.name)
      end
-       
+
      redirect_to action: :index
    end
 

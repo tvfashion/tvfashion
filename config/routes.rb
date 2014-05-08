@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'show#index'
 
   # match '/shows', to: "show/create", to: 'show#new', as: 'shows', via: [:post, :patch]

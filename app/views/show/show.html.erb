@@ -4,36 +4,40 @@
   <div class="large-12 columns">
     <!-- Desktop Slider -->
 
-    <div class="hide-for-small">
-        <div id="featured">
-            <div class="fanart">
-                <% fanart = @show.banner.where("banner_type = 'fanart'").first %>
-                <%= image_tag(fanart.image) %>
-                <div class="fanart-overlay">
-                    <% poster = @show.banner.where("banner_type = 'poster'").first %>
-                    <%= image_tag(poster.image) %>
-                    <div class="fanart-description">
-                        <div class="fanart-content">
-                            <h1><%= @show.name %></h1>
-                            <p><%= @show.overview %></p>
+        <div class="hide-for-small">
+            <div id="featured">
+                <div class="fanart">
+                    <% fanart = @show.banner.where("banner_type = 'fanart'").first %>
+                    <%= image_tag(fanart.image) %>
+                    <div class="fanart-overlay">
+                        <% poster = @show.banner.where("banner_type = 'poster'").first %>
+                        <%= image_tag(poster.image) %>
+                        <div class="fanart-description">
+                            <div class="fanart-content">
+                                <h1><%= @show.name %></h1>
+                                <p class='overview'><%= @show.overview %></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div><!-- End Desktop Slider -->
+        </div><!-- End Desktop Slider -->
+  </div>
+</div>
+
+<hr class="carved" />
 
 <!-- Seasons -->
 <div class="row">
   <div class="large-12 columns">
       <h1>Seasons</h1>
-    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
+    <ul class="row all-seasons">
 <!-- Use season count to make a loop to pull each season cover  -->
         <%  $i = 0
             while $i < @show.seasons_count do %>
-        
-        <% $i +=1   %> 
-        <% cover = @show.banner.where("season = ?", $i.to_s).take(1) %> 
+
+        <% $i +=1   %>
+        <% cover = @show.banner.where("season = ?", $i.to_s).take(1) %>
         <% if cover.first != nil %>
         <li class='span3'>
           <%= link_to( image_tag(cover.first.image), season_path(@show.id, $i)) %>
@@ -45,33 +49,37 @@
 </div><br>
 <!-- END Seasons -->
 
+<hr class="carved" />
+
 <!-- Top Actors -->
 <div class="row">
   <div class="large-12 columns">
       <h1>Top Actors</h1>
-        <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 actors-list">
-        
+        <ul class="row actors-list">
+
           <% sorted = @show.actors.sort { |a,b| a.sort_order <=> b.sort_order } %> <!-- sort actors by sort order -->
           <% sorted.each do |act| %>
           <% if act.image != nil %> <!-- Checks to see if they have image -->
-          <li class="span3"> 
+          <li class="span3">
              <%= link_to( image_tag(act.image), show_actor_path(@show.id, act)) %> <!-- Display actor image and link to their page -->
              <span class="act-name"><%= act.name %></span>
           </li>
           <% end %>
           <% end %>
   <!--        for each actor matching series_id with image ( show image and link to corresponding actor)       -->
-        
+
         </ul>
   </div>
 </div><br>
 <!-- END Top Actors -->
 
+<hr class="carved" />
+
 <!-- Top Fashion -->
 <div class="row">
   <div class="large-12 columns">
       <h1>Top Fashion</h1>
-    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+    <ul class="row">
 <!--        for each fashion matching series_id ( show image and link to corresponding fashion       -->
     </ul>
   </div>
@@ -79,3 +87,4 @@
 <!-- END Top Fashion -->
 </div>
 </div>
+

@@ -14,6 +14,24 @@
  *= require_self
  */
 
+@import url('https://fonts.googleapis.com/css?family=Carrois+Gothic+SC');
+@import url('https://fonts.googleapis.com/css?family=Raleway:800,700,500,900');
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400,500');
+
+.navbar a{
+	font-family: 'Carrois Gothic SC', sans-serif;
+}
+
+h1, h2, .show-title{
+	font-family: 'Raleway', sans-serif;
+}
+
+h3.show-title{ text-align: center; }
+
+h3.show-title a{ color: #3e3e3e; }
+
+h3.show-title a:hover{ text-decoration: underline; }
+
 ul{ list-style: none; }
 
 .actors-list li{ position: relative; margin-bottom: 20px; }
@@ -27,4 +45,73 @@ ul{ list-style: none; }
     top: 100%;
     margin-top: -40px;
     width: 100%;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font-size: 17px;
 }
+
+a, a:link, a:visited {
+    text-decoration: none;
+}
+
+.brand{
+	font-size: 26px !important;
+	font-weight: 600 !important;
+}
+
+.row{ margin-left: -20px; }
+
+hr.carved {
+  border-bottom: 1px solid #ebebec;
+  border-top: none;
+}
+
+.overview{
+	font-family: 'Dosis', sans-serif;
+	font-size: 19px;
+}
+
+.copyright{
+	font-family: 'Carrois Gothic SC', sans-serif;
+	text-align: right;
+	border-top: 1px solid #ebebec;
+	padding-top: 10px;
+	margin-top: 10px;
+	clear: both;
+}
+
+.signin-container{
+	font-family: 'Dosis', sans-serif;
+	font-weight: 600 !important;
+	font-size: 17px !important;
+}
+
+.btn{
+	font-family: 'Dosis', sans-serif;
+	font-size: 17px;
+	padding-bottom: 7px;
+}
+
+#user_remember_me{
+	float: left;
+	margin-right: 10px;
+}
+
+.links-bottom a:after{
+	padding: 0px 20px;
+	content: '|';
+}
+
+.links-bottom a:last-child:after{
+	content: '';
+	padding-right: 0px;
+}
+
+.links-bottom a{
+	float: left;
+}
+
+.signin-container label{
+	font-size: 16px;
+}
+
+.all-seasons .span3{ margin-bottom: 20px; }

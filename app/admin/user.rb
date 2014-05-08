@@ -1,6 +1,6 @@
-ActiveAdmin.register Show do
+ActiveAdmin.register User do
 
-
+  
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -13,11 +13,5 @@ ActiveAdmin.register Show do
   #  permitted << :other if resource.something?
   #  permitted
   # end
-
-  member_action :create, method: 'post' do
-     pullFromDb = Functions.new
-     pullFromDb.AddOrUpdate(params[:show][:name])
-     redirect_to action: :index
-  end
-
+  
 end
