@@ -1,0 +1,81 @@
+<!-- Top Fan Art -->
+<div class="row">
+  <div class="large-12 columns">
+    <!-- Desktop Slider -->
+
+    <div class="hide-for-small">
+        <div id="featured">
+            <div class="fanart">
+                <% fanart = @season_show.banner.where("banner_type = 'fanart'").first %>
+                <%= image_tag(fanart.image) %>
+                <div class="fanart-overlay">
+                    <% poster = @season_show.banner.where("season = ?", @season_number).first %>
+                    <%= image_tag(poster.image) %>
+                    <div class="fanart-description">
+                        <div class="fanart-content">
+                            <h1><%= @season_show.name %>, Season <%= @season_number %></h1>
+                            <p><%= @season_show.overview %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Desktop Slider -->
+    <!-- Mobile Header -->
+
+  </div>
+</div><br>
+<!-- END Top Fan Art -->
+
+
+<!-- Episodes -->
+<div class="row">
+  <div class="large-12 columns">
+      <h1>Episodes</h1>
+    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+        <% @episodes.each do |epi| %>
+        <% if epi.image %> <!-- Checks to see if they have image -->
+        <li class='span2'> 
+       <%= link_to( image_tag(epi.image), episode_path(epi)) %> <!-- Display actor image and link to their page -->
+            <p class="episodeInfo"><%= epi.season_number.to_s + " X " + epi.number.to_s %></p>
+        </li>
+        <% end %>
+        <% end %>
+
+        
+    </ul>
+  </div>
+</div><br>
+<!-- END Episodes -->
+
+<!-- Top Actors -->
+<div class="row">
+  <div class="large-12 columns">
+      <h1>Top Actors</h1>
+    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 actors-list">
+        <% sorted = @season_show.actors.sort { |a,b| a.sort_order <=> b.sort_order } %> <!-- sort actors by sort order -->
+        <% sorted.each do |act| %>
+        <% if act.image != nil %> <!-- Checks to see if they have image -->
+        <li class='span3'> 
+          <%= link_to( image_tag(act.image), show_actor_path(@season_show.id, act)) %> <!-- Display actor image and link to their page -->
+          <span class="act-name"><%= act.name %></span>
+        </li>
+        <% end %>
+        <% end %>
+<!--        for each actor matching series_id with thumb ( show thumb and link to corresponding actor)       -->
+        
+    </ul>
+  </div>
+</div><br>
+<!-- END Top Actors -->
+
+<!-- Top Fashion -->
+<div class="row">
+  <div class="large-12 columns">
+      <h1>Top Fashion</h1>
+    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+<!--        for each fashion matching series_id ( show thumb and link to corresponding fashion       -->
+    </ul>
+  </div>
+</div><br>
+<!-- END Top Fashion -->

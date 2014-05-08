@@ -5,7 +5,6 @@
                 <% if @show.present? %>
                     <% @show.each do |show| %>
                             <li class='span3'>
-
                                 <% poster = show.banner.where("banner_type = 'poster'").first %>
                                 <% if !poster.nil? %>
                                     <%= link_to(image_tag(poster.image), show) %>

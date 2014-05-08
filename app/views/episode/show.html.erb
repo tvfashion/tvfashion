@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+
+<!-- Top Fan Art -->
+<div class="row">
+  <div class="large-12 columns">
+    <!-- Desktop Slider -->
+
+    <div class="hide-for-small">
+        <div id="featured">
+            <div class="fanart">
+                <% fanart = @episode.show.banner.where("banner_type = 'fanart'").first %>
+                <%= image_tag(fanart.image) %>
+                <div class="fanart-overlay-episode">
+                    <%= image_tag(@episode.image) %>
+                    <div class="fanart-description">
+                        <div class="fanart-content-episode">
+                            <h1><%= @episode.name %></h1>
+                            <p><%= @episode.overview %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Desktop Slider -->
+    <!-- Mobile Header -->
+
+  </div>
+</div><br>
+<!-- END Top Fan Art -->
+
+<div class="row">
+    <div class="large-12 columns">
+      <h1>Fashions coming soon</h1>
+    </div>
+</div>
