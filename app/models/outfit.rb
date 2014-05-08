@@ -3,4 +3,6 @@ class Outfit < ActiveRecord::Base
   
   belongs_to :actor
   belongs_to :episode
+  attr_accessor :show
+  
 end

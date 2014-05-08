@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :fashion
   resources :episode
   resources :actor
+  resources :outfit
 
   get 'update_all_show', to: 'show#update_show'
 

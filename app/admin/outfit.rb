@@ -13,5 +13,7 @@ ActiveAdmin.register Outfit do
   #  permitted << :other if resource.something?
   #  permitted
   # end
-  
+
+    form :partial => "form"
+
 end
