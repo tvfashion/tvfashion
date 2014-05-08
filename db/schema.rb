@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140502162811) do
 
   create_table "actors", force: true do |t|
     t.string   "name"
-    t.integer  "role"
+    t.string   "role"
     t.string   "image"
     t.integer  "show_id"
     t.integer  "sort_order"
