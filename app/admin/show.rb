@@ -21,7 +21,7 @@ ActiveAdmin.register Show do
   end
 
   form :html => { :enctype => "multipart/form-data" } do |f|
-      f.inputs "show" do
+      f.inputs "Show" do
         f.input :name
       end
         f.actions
