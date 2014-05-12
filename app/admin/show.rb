@@ -20,4 +20,11 @@ ActiveAdmin.register Show do
      redirect_to action: :index
   end
 
+  form :html => { :enctype => "multipart/form-data" } do |f|
+      f.inputs "show" do
+        f.input :name
+      end
+        f.actions
+  end
+
 end
