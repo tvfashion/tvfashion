@@ -1,4 +1,4 @@
-ActiveAdmin.register Outfit do
+ActiveAdmin.register Outfits do
 
   
   # See permitted parameters documentation:
@@ -13,7 +13,5 @@ ActiveAdmin.register Outfit do
   #  permitted << :other if resource.something?
   #  permitted
   # end
-
-    form :partial => "form"
-
+  
 end

@@ -1,6 +1,6 @@
 class OutfitController < ApplicationController
   def new
-  	@outfit = Outfit.new
+  	@outfit = Outfits.new
   end
 
   def edit
@@ -10,7 +10,7 @@ class OutfitController < ApplicationController
   end
 
     def create
-    @outfit = Outfit.new(outfit_params)
+    @outfit = Outfits.new(outfit_params)
    
     respond_to do |format|
       if @outfit.save
@@ -27,7 +27,7 @@ class OutfitController < ApplicationController
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_outfit
-      @outfit = Outfit.find(params[:id])
+      @outfit = Outfits.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

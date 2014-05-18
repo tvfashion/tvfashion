@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :fashion
   resources :episode
   resources :actor
-  resources :outfit
+  resources :outfits
 
   get 'update_all_show', to: 'show#update_show'
 
@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
