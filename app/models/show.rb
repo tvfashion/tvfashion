@@ -4,5 +4,6 @@ class Show < ActiveRecord::Base
 	has_many :banner
 	has_many :episodes
   	has_many :actors
-  	has_many :outfits, through: :episodes
+  	# has_many :outfits, through: :episodes
+  	# has_many :outfits
 end

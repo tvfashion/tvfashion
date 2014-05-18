@@ -23,7 +23,6 @@ Rails.application.routes.draw do
     resources :actor
     resources :episode do
          resources :fashion
-      
     end
   end
 

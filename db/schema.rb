@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 20140518052703) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "show_id"
+    t.integer  "season"
   end
 
   add_index "outfits", ["actor_id"], name: "index_outfits_on_actor_id"
