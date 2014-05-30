@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140518052703) do
+ActiveRecord::Schema.define(version: 20140528200929) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -38,9 +38,11 @@ ActiveRecord::Schema.define(version: 20140518052703) do
     t.datetime "updated_at"
   end
 
+  add_index "actors", ["show_id"], name: "index_actors_on_show_id"
+
   create_table "admin_users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: ""
+    t.string   "encrypted_password",     default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -86,6 +88,8 @@ ActiveRecord::Schema.define(version: 20140518052703) do
     t.datetime "updated_at"
   end
 
+  add_index "episodes", ["show_id"], name: "index_episodes_on_show_id"
+
   create_table "fashions", force: true do |t|
     t.boolean  "match"
     t.string   "image"
@@ -104,8 +108,6 @@ ActiveRecord::Schema.define(version: 20140518052703) do
     t.integer  "episode_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "show_id"
-    t.integer  "season"
   end
 
   add_index "outfits", ["actor_id"], name: "index_outfits_on_actor_id"

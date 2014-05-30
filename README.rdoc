@@ -11,3 +11,23 @@ Steps that are necessary to get the application up and running.
 * <tt>rails s</tt>
 
 That's up App Would be up and running
+
+
+
+
+
+
+rails generate model Show name:string overview:text first_aired:string genres:string network:string rating:integer runtime:integer air_time:string imdb_id:string episodes_count:integer actors_count:integer seasons_count:integer status:string airs_dayofweek:string rating_count:integer
+rails generate model Actor name:string role:string image:string sort_order:integer show:references
+rails generate model Episode season_number:integer number:integer name:string overview:text image:string air_date:string guest_stars:string director:string writer:string rating:integer rating_count:integer show:references
+rails generate model Banner banner_type:string banner_type2:string season:integer image:string language:string show:references
+rails generate model Outfit name:string image:string actor:references episode:references
+rails generate model Fashion match:boolean image:string ad_url:string outfit:references
+
+rails generate controller Show index new update delete
+rails generate controller Outfit index new edit delete
+rails generate controller Fashion index new edit delete
+rails generate controller Season index
+rails generate controller Episode index
+rails generate controller Actor index
+rails generate controller Home index

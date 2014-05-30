@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'outfit/new'
+
+  get 'outfit/edit'
+
+  get 'outfit/delete'
+
   devise_for :users
   root 'show#index'
 
