@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   match '/show/create', to: 'show#create', as: 'newshow', via: [:post, :patch]
 
   resources :show do
-    get :get_episode, on: :collection
+    get :get_episodes, on: :collection
     get :get_actors, on: :collection
   end
 

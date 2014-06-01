@@ -15,11 +15,11 @@
     <%= f.label :show %><br>
     <%= f.select :show, Show.all.collect{|show| [show.name, show.id]},include_blank: 'Select Show' %>
   </div>
-  <div class="field hide" id='episodes'>
+  <div class="field hide" id='episodes_div'>
     <%= f.label :episode_id %><br>
     <%= f.select :episode_id, [] %>
   </div>
-  <div class="field hide" id='actors'>
+  <div class="field hide" id='actors_div'>
     <%= f.label :actor_id %><br>
     <%= f.select :actor_id, [] %>
   </div>
@@ -34,4 +34,4 @@
     <%= f.submit %>
   </div>
 <% end %>
-
+<%= javascript_include_tag 'outfit'%>
